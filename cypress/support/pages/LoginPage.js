@@ -14,7 +14,7 @@ class LoginPage {
   fillThird(digitthree) {
     cy.get('#digit3').type(digitthree);
   }
-  illFourth(digitfour) {
+  fillFourth(digitfour) {
     cy.get('#digit4').type(digitfour);
   }
 
@@ -24,11 +24,19 @@ class LoginPage {
     cy.get('button[type="submit"]').click();
   }
 
+  showErrorInvalid(){
+    cy.get('.text-red-500.text-sm').should('contain','Por favor ingresa el código correcto para tener acceso')
+  }
+
+  showErrorTry(){
+    cy.get('.text-red-500.text-sm').should('contain','Has excedido el número de intentos permitidos. Por favor intenta más tarde')
+  }
+
   login(digitone, digittwo, digitthree, digitfour) {
     this.fillFirst(digitone);
     this.fillSecond(digittwo);
     this.fillThird(digitthree);
-    this.illFourth(digitfour);
+    this.fillFourth(digitfour);
     this.submit();
   }
 
