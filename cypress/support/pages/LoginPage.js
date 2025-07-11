@@ -1,6 +1,6 @@
 class LoginPage {
   visit() {
-    cy.visit('https://www.selaski.com/public/reports/shared?token=cdexd34d7a31da5257e1d5f7af80e21995f0dfefr'); // Replace with your URL
+    cy.visit('https://www.selaski.com/public/reports/shared?token=cdexd34d7a31da5257e1d5f7af80e21995f0dfefr'); 
   }
 
   fillFirst(digitone) {
@@ -38,7 +38,7 @@ class LoginPage {
   }
 
   checkbutton(status) {
-    cy.get('button[type="submit"]').should(status);
+    cy.get('button[type="submit"]',{ timeout: 10000 }).should(status);
   }
 
   checkLoginSuccess() {
