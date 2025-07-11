@@ -18,26 +18,27 @@ class LoginPage {
     cy.get('#digit4').type(digitfour);
   }
 
-  //mistake error css .text-red-500.text-sm Código incorrecto. Por favor ingresa el código correcto para tener acceso
+  
 
   submit() {
     cy.get('button[type="submit"]').click();
   }
 
-  showErrorInvalid(){
-    cy.get('.text-red-500.text-sm').should('contain','Por favor ingresa el código correcto para tener acceso')
-  }
 
-  showErrorTry(){
-    cy.get('.text-red-500.text-sm').should('contain','Has excedido el número de intentos permitidos. Por favor intenta más tarde')
+   showErrorInvalid(){
+    cy.get('.text-red-500.text-sm').should('contain','Código incorrecto. Por favor ingresa el código correcto para tener acceso')
   }
-
+  
   login(digitone, digittwo, digitthree, digitfour) {
     this.fillFirst(digitone);
     this.fillSecond(digittwo);
     this.fillThird(digitthree);
     this.fillFourth(digitfour);
-    this.submit();
+    
+  }
+
+  checkbutton(status) {
+    cy.get('button[type="submit"]').should(status);
   }
 
   checkLoginSuccess() {
