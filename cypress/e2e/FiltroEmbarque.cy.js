@@ -21,7 +21,7 @@ describe('FiltroEmbarque', ()=>{
         FiltroPage.FieldEscribaStatus('be.visible');
       });
 
-    it('Should close the filter aplied', () => {    
+    it('Should close the the applied filte', () => {    
         
         FiltroPage.OptionEmbarque();
         FiltroPage.FieldEscribaStatus('be.visible');
