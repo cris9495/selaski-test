@@ -62,9 +62,9 @@ class FiltroPage {
 
   checkEmbarqueValues(expectedValues) {
     this.catchrowsembarque().then((actualValues) => {
-      expect(actualValues).to.deep.equal(expectedValues); //how add assertion to check if the values match cypress
+      expect(actualValues).to.deep.equal(expectedValues); 
       console.log('Valores de Embarque verificados:', JSON.stringify(actualValues));
-      cy.log('Valores de Embarque verificados:', JSON.stringify(actualValues)); //when execute cypress i don't see the log, help @workaround
+      cy.log('Valores de Embarque verificados:', JSON.stringify(actualValues)); 
 
     });
   }
